@@ -4,6 +4,8 @@ import hashlib
 import os
 
 app = Flask(__name__)
+application = app  # ← Esta línea es clave para Render con Gunicorn
+
 SECRET_KEY = os.getenv("BINGX_SECRET_KEY")
 
 @app.route('/')
